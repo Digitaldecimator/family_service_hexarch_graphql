@@ -369,7 +369,7 @@ Family Service follows the hexagonal architecture pattern (also known as ports a
 
 ### Hexagonal Architecture Diagram
 
-![Hexagonal Architecture Diagram](docs/assets/hex_arch_onion.png)
+![Hexagonal Architecture Diagram](docs/assets/hex_architecture.svg)
 
 ### Key Benefits of Hexagonal Architecture
 
