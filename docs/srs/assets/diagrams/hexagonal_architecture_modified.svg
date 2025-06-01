@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="900" height="750" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style>
+        .title {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            text-anchor: middle;
+        }
+        .subtitle {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            text-anchor: middle;
+        }
+        .component {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            text-anchor: middle;
+        }
+        .interface {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            font-style: italic;
+            text-anchor: middle;
+        }
+        .note {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            text-anchor: middle;
+        }
+    </style>
+
+    <!-- Title -->
+    <text x="450" y="30" class="title">Family Service - Hexagonal Architecture</text>
+    <text x="450" y="60" class="subtitle">Primary Adapters (Left) and Secondary Adapters (Right)</text>
+
+    <!-- Hexagon for Domain -->
+    <polygon points="450,200 550,250 550,350 450,400 350,350 350,250" 
+             fill="#FFCCCC" stroke="#FF6666" stroke-width="2" />
+    <text x="450" y="230" class="subtitle">Domain</text>
+    <text x="450" y="260" class="component">Entities</text>
+    <text x="450" y="280" class="note">Parent, Child</text>
+    <text x="450" y="300" class="component">Value Objects</text>
+    <text x="450" y="320" class="note">Timestamps, IDs</text>
+    <text x="450" y="340" class="component">Domain Services</text>
+    <text x="450" y="360" class="note">Business Rules</text>
+
+    <!-- Hexagon for Application -->
+    <polygon points="450,150 600,225 600,425 450,500 300,425 300,225" 
+             fill="#FFFFCC" stroke="#FFCC00" stroke-width="2" fill-opacity="0.7" />
+    <text x="450" y="180" class="subtitle">Application</text>
+
+    <!-- Application Components -->
+    <rect x="320" y="390" width="120" height="60" fill="#FFFFCC" stroke="#FFCC00" stroke-width="1" />
+    <text x="380" y="415" class="component">Services</text>
+    <text x="380" y="435" class="note">FamilyService</text>
+
+    <rect x="460" y="390" width="120" height="60" fill="#FFFFCC" stroke="#FFCC00" stroke-width="1" />
+    <text x="520" y="415" class="component">Use Cases</text>
+    <text x="520" y="435" class="note">CRUD Operations</text>
+
+    <!-- Primary Ports (Left) -->
+    <rect x="200" y="225" width="100" height="50" fill="#E6F2FF" stroke="#3399FF" stroke-width="1" rx="10" ry="10" />
+    <text x="250" y="245" class="interface">«primary port»</text>
+    <text x="250" y="265" class="component">Services API</text>
+
+    <!-- Secondary Ports (Right) -->
+    <rect x="600" y="225" width="100" height="50" fill="#E6F2FF" stroke="#3399FF" stroke-width="1" rx="10" ry="10" />
+    <text x="650" y="245" class="interface">«secondary port»</text>
+    <text x="650" y="265" class="component">Repositories</text>
+
+    <!-- Primary Adapters (Left) -->
+    <rect x="50" y="175" width="120" height="60" fill="#E6FFE6" stroke="#66CC66" stroke-width="1" />
+    <text x="110" y="195" class="component">GraphQL</text>
+    <text x="110" y="215" class="note">API</text>
+    <text x="110" y="230" class="note">Implementation</text>
+
+    <rect x="50" y="275" width="120" height="60" fill="#E6FFE6" stroke="#66CC66" stroke-width="1" />
+    <text x="110" y="295" class="component">REST</text>
+    <text x="110" y="315" class="note">API</text>
+    <text x="110" y="330" class="note">Implementation</text>
+
+    <rect x="50" y="375" width="120" height="60" fill="#E6FFE6" stroke="#66CC66" stroke-width="1" />
+    <text x="110" y="395" class="component">gRPC</text>
+    <text x="110" y="415" class="note">API</text>
+    <text x="110" y="430" class="note">Implementation</text>
+
+    <!-- Secondary Adapters (Right) -->
+    <rect x="730" y="175" width="120" height="60" fill="#E6FFE6" stroke="#66CC66" stroke-width="1" />
+    <text x="790" y="195" class="component">MongoDB</text>
+    <text x="790" y="215" class="note">Repository</text>
+    <text x="790" y="230" class="note">Implementation</text>
+
+    <rect x="730" y="275" width="120" height="60" fill="#E6FFE6" stroke="#66CC66" stroke-width="1" />
+    <text x="790" y="295" class="component">PostgreSQL</text>
+    <text x="790" y="315" class="note">Repository</text>
+    <text x="790" y="330" class="note">Implementation</text>
+
+    <!-- Infrastructure -->
+    <rect x="50" y="475" width="120" height="60" fill="#F2E6FF" stroke="#9966CC" stroke-width="1" />
+    <text x="110" y="495" class="component">Logging</text>
+    <text x="110" y="515" class="note">Zap Logger</text>
+
+    <rect x="200" y="475" width="120" height="60" fill="#F2E6FF" stroke="#9966CC" stroke-width="1" />
+    <text x="260" y="495" class="component">Auth</text>
+    <text x="260" y="515" class="note">JWT, OIDC</text>
+
+    <rect x="350" y="475" width="120" height="60" fill="#F2E6FF" stroke="#9966CC" stroke-width="1" />
+    <text x="410" y="495" class="component">Health</text>
+    <text x="410" y="515" class="note">Health Checks</text>
+
+    <rect x="500" y="475" width="120" height="60" fill="#F2E6FF" stroke="#9966CC" stroke-width="1" />
+    <text x="560" y="495" class="component">DI</text>
+    <text x="560" y="515" class="note">Dependency Injection</text>
+
+    <rect x="650" y="475" width="120" height="60" fill="#F2E6FF" stroke="#9966CC" stroke-width="1" />
+    <text x="710" y="495" class="component">Middleware</text>
+    <text x="710" y="515" class="note">Request Processing</text>
+
+    <rect x="350" y="545" width="120" height="60" fill="#F2E6FF" stroke="#9966CC" stroke-width="1" />
+    <text x="410" y="565" class="component">Config</text>
+    <text x="410" y="585" class="note">YAML, ENV</text>
+
+    <rect x="500" y="545" width="120" height="60" fill="#F2E6FF" stroke="#9966CC" stroke-width="1" />
+    <text x="560" y="565" class="component">Telemetry</text>
+    <text x="560" y="585" class="note">OpenTelemetry</text>
+
+    <!-- Connections -->
+    <!-- Primary Adapters to Ports -->
+    <line x1="170" y1="205" x2="200" y2="225" stroke="#000000" stroke-width="1" />
+    <line x1="170" y1="305" x2="200" y2="250" stroke="#000000" stroke-width="1" />
+    <line x1="170" y1="405" x2="200" y2="275" stroke="#000000" stroke-width="1" />
+
+    <!-- Ports to Application -->
+    <line x1="300" y1="250" x2="350" y2="300" stroke="#000000" stroke-width="1" />
+    <line x1="550" y1="300" x2="600" y2="250" stroke="#000000" stroke-width="1" />
+
+    <!-- Secondary Ports to Adapters -->
+    <line x1="700" y1="225" x2="730" y2="205" stroke="#000000" stroke-width="1" />
+    <line x1="700" y1="275" x2="730" y2="305" stroke="#000000" stroke-width="1" />
+
+    <!-- External Systems -->
+    <rect x="730" y="625" width="120" height="60" fill="#FFE6E6" stroke="#FF9999" stroke-width="1" />
+    <text x="790" y="645" class="component">MongoDB</text>
+    <text x="790" y="665" class="note">Database</text>
+
+    <rect x="580" y="625" width="120" height="60" fill="#FFE6E6" stroke="#FF9999" stroke-width="1" />
+    <text x="640" y="645" class="component">PostgreSQL</text>
+    <text x="640" y="665" class="note">Database</text>
+
+    <rect x="200" y="625" width="120" height="60" fill="#FFE6E6" stroke="#FF9999" stroke-width="1" />
+    <text x="260" y="645" class="component">Prometheus</text>
+    <text x="260" y="665" class="note">Metrics</text>
+
+    <rect x="50" y="625" width="120" height="60" fill="#FFE6E6" stroke="#FF9999" stroke-width="1" />
+    <text x="110" y="645" class="component">Grafana</text>
+    <text x="110" y="665" class="note">Dashboards</text>
+
+    <!-- Connections to External Systems -->
+    <!-- No dashed lines from external systems to infrastructure as per requirements -->
+
+    <!-- Legend -->
+    <rect x="50" y="700" width="20" height="20" fill="#FFCCCC" stroke="#FF6666" stroke-width="1" />
+    <text x="80" y="715" class="note" text-anchor="start">Domain Layer</text>
+
+    <rect x="200" y="700" width="20" height="20" fill="#FFFFCC" stroke="#FFCC00" stroke-width="1" />
+    <text x="230" y="715" class="note" text-anchor="start">Application Layer</text>
+
+    <rect x="350" y="700" width="20" height="20" fill="#E6F2FF" stroke="#3399FF" stroke-width="1" />
+    <text x="380" y="715" class="note" text-anchor="start">Ports (Interfaces)</text>
+
+    <rect x="500" y="700" width="20" height="20" fill="#E6FFE6" stroke="#66CC66" stroke-width="1" />
+    <text x="530" y="715" class="note" text-anchor="start">Adapters</text>
+
+    <rect x="650" y="700" width="20" height="20" fill="#F2E6FF" stroke="#9966CC" stroke-width="1" />
+    <text x="680" y="715" class="note" text-anchor="start">Infrastructure</text>
+
+    <rect x="800" y="700" width="20" height="20" fill="#FFE6E6" stroke="#FF9999" stroke-width="1" />
+    <text x="830" y="715" class="note" text-anchor="start">External Systems</text>
+</svg>

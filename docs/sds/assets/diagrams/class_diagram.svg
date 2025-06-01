@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold">Family Service - Domain Model Class Diagram</text>
+  
+  <!-- Entity Interface -->
+  <rect x="300" y="60" width="200" height="160" fill="#e6f2ff" stroke="#3399ff" stroke-width="2" />
+  <line x1="300" y1="90" x2="500" y2="90" stroke="#3399ff" stroke-width="2" />
+  <line x1="300" y1="120" x2="500" y2="120" stroke="#3399ff" stroke-width="2" />
+  <text x="400" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold">«interface»</text>
+  <text x="400" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Entity</text>
+  <text x="310" y="140" text-anchor="start" font-family="Arial, sans-serif" font-size="12">+ GetID(): uuid.UUID</text>
+  <text x="310" y="160" text-anchor="start" font-family="Arial, sans-serif" font-size="12">+ IsDeleted(): bool</text>
+  <text x="310" y="180" text-anchor="start" font-family="Arial, sans-serif" font-size="12">+ MarkAsDeleted()</text>
+  <text x="310" y="200" text-anchor="start" font-family="Arial, sans-serif" font-size="12">+ GetCreatedAt(): time.Time</text>
+  <text x="310" y="220" text-anchor="start" font-family="Arial, sans-serif" font-size="12">+ GetUpdatedAt(): time.Time</text>
+  
+  <!-- Parent Class -->
+  <rect x="100" y="280" width="250" height="280" fill="#ffffcc" stroke="#ffcc00" stroke-width="2" />
+  <line x1="100" y1="310" x2="350" y2="310" stroke="#ffcc00" stroke-width="2" />
+  <line x1="100" y1="420" x2="350" y2="420" stroke="#ffcc00" stroke-width="2" />
+  <text x="225" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Parent</text>
+  <text x="110" y="330" text-anchor="start" font-family="Arial, sans-serif" font-size="12">- ID: uuid.UUID</text>
+  <text x="110" y="350" text-anchor="start" font-family="Arial, sans-serif" font-size="12">- FirstName: string</text>
+  <text x="110" y="370" text-anchor="start" font-family="Arial, sans-serif" font-size="12">- LastName: string</text>
+  <text x="110" y="390" text-anchor="start" font-family="Arial, sans-serif" font-size="12">- Email: string</text>
+  <text x="110" y="410" text-anchor="start" font-family="Arial, sans-serif" font-size="12">- BirthDate: time.Time</text>
+  <text x="110" y="430" text-anchor="start" font-family="Arial, sans-serif" font-size="12">- Children: []Child</text>
+  <text x="110" y="450" text-anchor="start" font-family="Arial, sans-serif" font-size="12">- CreatedAt: time.Time</text>
+  <text x="110" y="470" text-anchor="start" font-family="Arial, sans-serif" font-size="12">- UpdatedAt: time.Time</text>
+  <text x="110" y="490" text-anchor="start" font-family="Arial, sans-serif" font-size="12">- DeletedAt: *time.Time</text>
+  <text x="110" y="510" text-anchor="start" font-family="Arial, sans-serif" font-size="12">+ AddChild(child: Child): void</text>
+  <text x="110" y="530" text-anchor="start" font-family="Arial, sans-serif" font-size="12">+ RemoveChild(childID: uuid.UUID): bool</text>
+  <text x="110" y="550" text-anchor="start" font-family="Arial, sans-serif" font-size="12">+ FullName(): string</text>
+  
+  <!-- Child Class -->
+  <rect x="450" y="280" width="250" height="260" fill="#ffffcc" stroke="#ffcc00" stroke-width="2" />
+  <line x1="450" y1="310" x2="700" y2="310" stroke="#ffcc00" stroke-width="2" />
+  <line x1="450" y1="410" x2="700" y2="410" stroke="#ffcc00" stroke-width="2" />
+  <text x="575" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Child</text>
+  <text x="460" y="330" text-anchor="start" font-family="Arial, sans-serif" font-size="12">- ID: uuid.UUID</text>
+  <text x="460" y="350" text-anchor="start" font-family="Arial, sans-serif" font-size="12">- FirstName: string</text>
+  <text x="460" y="370" text-anchor="start" font-family="Arial, sans-serif" font-size="12">- LastName: string</text>
+  <text x="460" y="390" text-anchor="start" font-family="Arial, sans-serif" font-size="12">- BirthDate: time.Time</text>
+  <text x="460" y="410" text-anchor="start" font-family="Arial, sans-serif" font-size="12">- ParentID: uuid.UUID</text>
+  <text x="460" y="430" text-anchor="start" font-family="Arial, sans-serif" font-size="12">- CreatedAt: time.Time</text>
+  <text x="460" y="450" text-anchor="start" font-family="Arial, sans-serif" font-size="12">- UpdatedAt: time.Time</text>
+  <text x="460" y="470" text-anchor="start" font-family="Arial, sans-serif" font-size="12">- DeletedAt: *time.Time</text>
+  <text x="460" y="490" text-anchor="start" font-family="Arial, sans-serif" font-size="12">+ FullName(): string</text>
+  <text x="460" y="510" text-anchor="start" font-family="Arial, sans-serif" font-size="12">+ Age(): int</text>
+  
+  <!-- Inheritance Relationships -->
+  <line x1="225" y1="280" x2="350" y2="220" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,5" />
+  <polygon points="350,220 340,215 345,225" fill="#333333" />
+  
+  <line x1="575" y1="280" x2="450" y2="220" stroke="#333333" stroke-width="1.5" stroke-dasharray="5,5" />
+  <polygon points="450,220 460,215 455,225" fill="#333333" />
+  
+  <!-- Association Relationship -->
+  <line x1="350" y1="430" x2="450" y2="430" stroke="#333333" stroke-width="1.5" />
+  <polygon points="450,430 440,425 440,435" fill="#333333" />
+  <text x="400" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="12">1</text>
+  <text x="400" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="12">0..*</text>
+</svg>

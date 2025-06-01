@@ -1,0 +1,1205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="800mm"
+   height="600mm"
+   viewBox="0 0 800 600"
+   version="1.1"
+   id="svg5"
+   xml:space="preserve"
+   inkscape:version="1.2.2 (b0a8486, 2022-12-01)"
+   sodipodi:docname="hex_arch_onion.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.914906"
+     inkscape:cx="975.51005"
+     inkscape:cy="629.02637"
+     inkscape:window-width="2052"
+     inkscape:window-height="1205"
+     inkscape:window-x="2749"
+     inkscape:window-y="86"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g4418" /><defs
+     id="defs2"><rect
+       x="1582.6762"
+       y="538.85317"
+       width="139.90508"
+       height="99.46377"
+       id="rect4632" /><marker
+       id="arrowhead"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="10,3.5 0,7 0,0 "
+         fill="#333333"
+         id="polygon544" /></marker><marker
+       id="arrowhead-0"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="10,3.5 0,7 0,0 "
+         fill="#333333"
+         id="polygon662" /></marker><marker
+       id="arrowhead-8"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="10,3.5 0,7 0,0 "
+         fill="#333333"
+         id="polygon780" /></marker><marker
+       id="arrowhead-05"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="10,3.5 0,7 0,0 "
+         fill="#333333"
+         id="polygon898" /></marker><marker
+       id="arrowhead-3"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon1016" /></marker><marker
+       id="arrowhead-7"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon1134" /></marker><marker
+       id="arrowhead-9"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon1252" /></marker><marker
+       id="arrowhead-5"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon1370" /></marker><marker
+       id="arrowhead-2"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon1488" /></marker><marker
+       id="arrowhead-39"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon1606" /></marker><marker
+       id="arrowhead-1"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon1724" /></marker><marker
+       id="arrowhead-36"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon1842" /></marker><marker
+       id="arrowhead-81"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon1960" /></marker><marker
+       id="arrowhead-4"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon2078" /></marker><marker
+       id="arrowhead-32"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon2196" /></marker><marker
+       id="arrowhead-41"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon2314" /></marker><marker
+       id="arrowhead-88"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon2432" /></marker><marker
+       id="arrowhead-15"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon2550" /></marker><marker
+       id="arrowhead-43"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon2668" /></marker><marker
+       id="arrowhead-95"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon2780" /></marker><marker
+       id="arrowhead-55"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon2901" /></marker><marker
+       id="arrowhead-883"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon3049" /></marker><marker
+       id="arrowhead-6"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon3185" /></marker><marker
+       id="arrowhead-417"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon3306" /></marker><marker
+       id="arrowhead-78"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon3427" /></marker><marker
+       id="arrowhead-44"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon3548" /></marker><marker
+       id="arrowhead-555"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon3669" /></marker><marker
+       id="arrowhead-74"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon3817" /></marker><marker
+       id="arrowhead-83"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon3959" /></marker><marker
+       id="arrowhead-22"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon4071" /></marker><marker
+       id="arrowhead-27"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon4192" /></marker><marker
+       id="arrowhead-10"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"><polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#333"
+         id="polygon4340" /></marker></defs><g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"><g
+       id="g2014"
+       transform="matrix(0.26458333,0,0,0.26458333,68.260144,20.396179)"><g
+         id="g4418"
+         transform="matrix(1.3060424,0,0,1.7122772,227.34576,-31.697245)"><rect
+           width="800"
+           height="600"
+           fill="#f8f9fa"
+           id="rect4268"
+           x="0"
+           y="0" /><text
+           x="400"
+           y="30"
+           text-anchor="middle"
+           class="title"
+           id="text4270">Family Service - Hexagonal Architecture (Onion)</text><rect
+           x="50"
+           y="60"
+           width="700"
+           height="520"
+           rx="10"
+           ry="10"
+           fill="none"
+           stroke="#999999"
+           stroke-width="1"
+           id="rect4272" /><path
+           d="M 400,80 C 580,80 700,180 700,300 700,420 580,520 400,520 220,520 100,420 100,300 100,180 220,80 400,80 Z"
+           fill="#f5f5f5"
+           stroke="#666666"
+           stroke-width="2"
+           id="path4274" /><text
+           x="400"
+           y="110"
+           text-anchor="middle"
+           class="layer-title"
+           id="text4276">Infrastructure</text><text
+           x="235.06395"
+           y="141.91501"
+           text-anchor="middle"
+           class="component"
+           id="text4278">Logging</text><text
+           x="126.48193"
+           y="300.63834"
+           text-anchor="middle"
+           class="component"
+           id="text4280">Auth</text><text
+           x="220"
+           y="460"
+           text-anchor="middle"
+           class="component"
+           id="text4282">DI</text><text
+           x="571.63116"
+           y="141.91501"
+           text-anchor="middle"
+           class="component"
+           id="text4284">Telemetry</text><text
+           x="669.33362"
+           y="302.55334"
+           text-anchor="middle"
+           class="component"
+           id="text4286">Config</text><text
+           x="574.9787"
+           y="460"
+           text-anchor="middle"
+           class="component"
+           id="text4288">Middleware</text><ellipse
+           cx="400"
+           cy="298.72333"
+           rx="240"
+           ry="180"
+           fill="#e6e6ff"
+           stroke="#8080ff"
+           stroke-width="2"
+           id="ellipse4290" /><text
+           x="400"
+           y="160"
+           text-anchor="middle"
+           class="layer-title"
+           id="text4292">Adapters</text><text
+           x="250"
+           y="190"
+           text-anchor="middle"
+           class="component"
+           id="text4294">GraphQL</text><text
+           x="550"
+           y="190"
+           text-anchor="middle"
+           class="component"
+           id="text4296">Repositories</text><text
+           x="250"
+           y="410"
+           text-anchor="middle"
+           class="component"
+           id="text4298">REST</text><text
+           x="188.75319"
+           y="300.78406"
+           text-anchor="middle"
+           class="component"
+           id="text4298-0"
+           style="font-size:12px;font-family:Arial, sans-serif">gRPC</text><text
+           x="550"
+           y="410"
+           text-anchor="middle"
+           class="component"
+           id="text4300">Storage</text><ellipse
+           cx="400"
+           cy="300"
+           rx="180"
+           ry="130"
+           fill="#ffffcc"
+           stroke="#ffcc00"
+           stroke-width="2"
+           id="ellipse4302" /><text
+           x="400"
+           y="225"
+           text-anchor="middle"
+           class="component"
+           id="text4306">Use Cases</text><text
+           x="310"
+           y="300"
+           text-anchor="middle"
+           class="component"
+           id="text4308">Services</text><text
+           x="490"
+           y="300"
+           text-anchor="middle"
+           class="component"
+           id="text4310">Workflows</text><ellipse
+           cx="400"
+           cy="300"
+           rx="120"
+           ry="85"
+           fill="#ffe6cc"
+           stroke="#ff9900"
+           stroke-width="2"
+           id="ellipse4312" /><text
+           x="493.69312"
+           y="308.44409"
+           text-anchor="middle"
+           class="component"
+           id="text4306-5-2"
+           style="font-size:12px;font-family:Arial, sans-serif"
+           inkscape:transform-center-x="37.016553"
+           inkscape:transform-center-y="-36.148978">Services</text><text
+           x="394.68085"
+           y="239.35732"
+           text-anchor="middle"
+           class="layer-title"
+           id="text4304-1"
+           style="font-weight:bold;font-size:16px;font-family:Arial, sans-serif;fill:#000000;stroke:none">Application</text><text
+           x="392.46802"
+           y="197.0181"
+           text-anchor="middle"
+           class="layer-title"
+           id="text4314">Ports</text><text
+           x="399.16312"
+           y="411.71063"
+           text-anchor="middle"
+           class="component"
+           id="text4316">Interfaces</text><ellipse
+           cx="398.32623"
+           cy="304.46835"
+           rx="70"
+           ry="50"
+           fill="#ffcccc"
+           stroke="#ff6666"
+           stroke-width="2"
+           id="ellipse4322" /><text
+           x="398.32626"
+           y="299.36166"
+           text-anchor="middle"
+           class="layer-title"
+           id="text4324">Domain</text><text
+           x="399.16312"
+           y="311.70163"
+           text-anchor="middle"
+           class="component"
+           id="text4326"><tspan
+             sodipodi:role="line"
+             id="tspan4522"
+             x="399.16312"
+             y="311.70163">Entities,</tspan><tspan
+             sodipodi:role="line"
+             id="tspan4524"
+             x="399.16312"
+             y="326.70163">Value Objects</tspan></text><rect
+           x="338.29932"
+           y="521.91498"
+           width="200"
+           height="60"
+           rx="10"
+           ry="10"
+           fill="#e6f2ff"
+           stroke="#3399ff"
+           stroke-width="2"
+           id="rect4328" /><text
+           x="438.29932"
+           y="546.91498"
+           text-anchor="middle"
+           class="layer-title"
+           id="text4330">MongoDB</text><text
+           x="438.29932"
+           y="566.91498"
+           text-anchor="middle"
+           class="component"
+           id="text4332">Document-based storage</text><rect
+           x="544.56812"
+           y="521.91498"
+           width="200"
+           height="60"
+           rx="10"
+           ry="10"
+           fill="#e6fff2"
+           stroke="#33cc99"
+           stroke-width="2"
+           id="rect4334" /><text
+           x="642.89435"
+           y="539.89331"
+           text-anchor="middle"
+           class="layer-title"
+           id="text4336">PostgreSQL</text><text
+           x="642.89435"
+           y="559.89331"
+           text-anchor="middle"
+           class="component"
+           id="text4338">Relational storage</text><line
+           x1="408.42139"
+           y1="521.32562"
+           x2="409.86292"
+           y2="431.67081"
+           stroke="#333333"
+           stroke-width="1.82282"
+           marker-end="url(#arrowhead-10)"
+           id="line4345"
+           style="marker-end:url(#arrowhead-10)" /><line
+           x1="551.66504"
+           y1="520.62659"
+           x2="480.01758"
+           y2="420.01758"
+           stroke="#333333"
+           stroke-width="2.02955"
+           marker-end="url(#arrowhead-10)"
+           id="line4347"
+           style="marker-end:url(#arrowhead-10)" /><text
+           x="400.59662"
+           y="374.83105"
+           text-anchor="middle"
+           class="component"
+           id="text4306-5"
+           style="font-size:12px;font-family:Arial, sans-serif">Use Cases</text><text
+           xml:space="preserve"
+           transform="matrix(0.76567194,0,0,0.5840176,-371.60881,-26.508953)"
+           id="text4630"
+           style="fill:#000000;white-space:pre;shape-inside:url(#rect4632)" /><text
+           x="156.39296"
+           y="211.98502"
+           text-anchor="middle"
+           class="component"
+           id="text4306-5-2-0"
+           style="font-size:12px;font-family:Arial, sans-serif">Health</text><text
+           x="150.53474"
+           y="387.52747"
+           text-anchor="middle"
+           class="component"
+           id="text4306-5-2-0-5"
+           style="font-size:12px;font-family:Arial, sans-serif">Server</text></g></g></g><style
+     id="style482">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style600">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style718">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style836">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style954">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style1072">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style1190">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style1308">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style1426">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style1544">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style1662">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style1780">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style1898">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style2016">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style2134">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style2252">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style2370">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style2488">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style2606">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style2724">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style2845">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style2975">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style3129">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style3250">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style3371">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style3492">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style3613">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style3743">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style3897">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style4015">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style4136">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style><style
+     id="style4266">
+    text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .layer-title {
+      font-size: 16px;
+      font-weight: bold;
+      fill: #000000;
+      stroke: none;
+    }
+    .component {
+      font-size: 12px;
+    }
+  </style></svg>

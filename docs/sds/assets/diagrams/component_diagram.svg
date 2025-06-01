@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Component Diagram for Family Service -->
+
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold">Family Service Component Diagram</text>
+
+  <!-- Domain Layer -->
+  <rect x="300" y="100" width="200" height="100" fill="#E1F5FE" stroke="#0288D1" stroke-width="2" rx="10" ry="10"/>
+  <text x="400" y="150" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Domain Layer</text>
+  <text x="400" y="175" font-family="Arial" font-size="12" text-anchor="middle">Parent, Child Entities</text>
+
+  <!-- Application Layer -->
+  <rect x="300" y="220" width="200" height="100" fill="#E8F5E9" stroke="#388E3C" stroke-width="2" rx="10" ry="10"/>
+  <text x="400" y="270" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Application Layer</text>
+  <text x="400" y="295" font-family="Arial" font-size="12" text-anchor="middle">Use Cases, Services</text>
+
+  <!-- Ports Layer -->
+  <rect x="100" y="220" width="150" height="100" fill="#FFF3E0" stroke="#F57C00" stroke-width="2" rx="10" ry="10"/>
+  <text x="175" y="270" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Primary Ports</text>
+  <text x="175" y="295" font-family="Arial" font-size="12" text-anchor="middle">Service Interfaces</text>
+
+  <rect x="550" y="220" width="150" height="100" fill="#FFF3E0" stroke="#F57C00" stroke-width="2" rx="10" ry="10"/>
+  <text x="625" y="270" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Secondary Ports</text>
+  <text x="625" y="295" font-family="Arial" font-size="12" text-anchor="middle">Repository Interfaces</text>
+
+  <!-- Primary Adapters -->
+  <rect x="100" y="360" width="150" height="80" fill="#F3E5F5" stroke="#7B1FA2" stroke-width="2" rx="10" ry="10"/>
+  <text x="175" y="400" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">GraphQL Adapter</text>
+
+  <!-- Secondary Adapters -->
+  <rect x="500" y="360" width="100" height="80" fill="#E8EAF6" stroke="#3F51B5" stroke-width="2" rx="10" ry="10"/>
+  <text x="550" y="400" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">MongoDB</text>
+
+  <rect x="620" y="360" width="100" height="80" fill="#E8EAF6" stroke="#3F51B5" stroke-width="2" rx="10" ry="10"/>
+  <text x="670" y="400" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">PostgreSQL</text>
+
+  <!-- Infrastructure Layer -->
+  <rect x="100" y="480" width="600" height="80" fill="#FFEBEE" stroke="#C62828" stroke-width="2" rx="10" ry="10"/>
+  <text x="400" y="510" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Infrastructure Layer</text>
+  <text x="400" y="535" font-family="Arial" font-size="12" text-anchor="middle">Auth, Config, DI, Health, Logging, Middleware, Server, Shutdown, Telemetry, Validation</text>
+
+  <!-- Connections -->
+  <!-- Primary Ports to Application -->
+  <line x1="250" y1="270" x2="300" y2="270" stroke="#000000" stroke-width="2"/>
+  <polygon points="295,265 300,270 295,275" fill="#000000"/>
+
+  <!-- Application to Secondary Ports -->
+  <line x1="500" y1="270" x2="550" y2="270" stroke="#000000" stroke-width="2"/>
+  <polygon points="545,265 550,270 545,275" fill="#000000"/>
+
+  <!-- Domain to Application -->
+  <line x1="400" y1="200" x2="400" y2="220" stroke="#000000" stroke-width="2"/>
+  <polygon points="395,215 400,220 405,215" fill="#000000"/>
+
+  <!-- Primary Adapters to Primary Ports -->
+  <line x1="175" y1="360" x2="175" y2="320" stroke="#000000" stroke-width="2"/>
+  <polygon points="170,325 175,320 180,325" fill="#000000"/>
+
+  <!-- Secondary Ports to Secondary Adapters -->
+  <line x1="600" y1="320" x2="550" y2="360" stroke="#000000" stroke-width="2"/>
+  <polygon points="553,353 550,360 557,357" fill="#000000"/>
+
+  <line x1="650" y1="320" x2="670" y2="360" stroke="#000000" stroke-width="2"/>
+  <polygon points="663,353 670,360 667,353" fill="#000000"/>
+
+  <!-- Infrastructure to All Layers -->
+  <line x1="175" y1="440" x2="175" y2="480" stroke="#000000" stroke-width="2"/>
+  <polygon points="170,475 175,480 180,475" fill="#000000"/>
+
+  <line x1="400" y1="320" x2="400" y2="480" stroke="#000000" stroke-width="2"/>
+  <polygon points="395,475 400,480 405,475" fill="#000000"/>
+
+  <line x1="625" y1="440" x2="625" y2="480" stroke="#000000" stroke-width="2"/>
+  <polygon points="620,475 625,480 630,475" fill="#000000"/>
+
+  <!-- MongoDB is associated with Infrastructure Layer -->
+  <line x1="550" y1="440" x2="550" y2="480" stroke="#000000" stroke-width="2"/>
+  <polygon points="545,475 550,480 555,475" fill="#000000"/>
+</svg>

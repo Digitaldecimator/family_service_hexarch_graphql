@@ -1,0 +1,253 @@
+"""
+Root query type for the API.
+"""
+type Query {
+  """
+  Get a parent by ID.
+  """
+  parent(id: ID!): Parent
+
+  """
+  List all parents with optional filtering, pagination, and sorting.
+  """
+  parents(filter: ParentFilter, pagination: PaginationInput, sort: SortInput): ParentConnection!
+
+  """
+  Get a child by ID.
+  """
+  child(id: ID!): Child
+
+  """
+  List all children with optional filtering, pagination, and sorting.
+  """
+  children(filter: ChildFilter, pagination: PaginationInput, sort: SortInput): ChildConnection!
+
+  """
+  List children for a specific parent with optional filtering, pagination, and sorting.
+  """
+  childrenByParent(parentId: ID!, filter: ChildFilter, pagination: PaginationInput, sort: SortInput): ChildConnection!
+}
+
+"""
+Root mutation type for the API.
+"""
+type Mutation {
+  """
+  Create a new parent.
+  """
+  createParent(input: CreateParentInput!): Parent!
+
+  """
+  Update an existing parent.
+  """
+  updateParent(id: ID!, input: UpdateParentInput!): Parent!
+
+  """
+  Delete a parent.
+  """
+  deleteParent(id: ID!): Boolean!
+
+  """
+  Create a new child.
+  """
+  createChild(input: CreateChildInput!): Child!
+
+  """
+  Update an existing child.
+  """
+  updateChild(id: ID!, input: UpdateChildInput!): Child!
+
+  """
+  Delete a child.
+  """
+  deleteChild(id: ID!): Boolean!
+
+  """
+  Add a child to a parent.
+  """
+  addChildToParent(parentId: ID!, childId: ID!): Boolean!
+
+  """
+  Remove a child from a parent.
+  """
+  removeChildFromParent(parentId: ID!, childId: ID!): Boolean!
+}
+
+"""
+Represents a parent in the family system.
+"""
+type Parent {
+  """
+  Unique identifier for the parent.
+  """
+  id: ID!
+
+  """
+  First name of the parent.
+  """
+  firstName: String!
+
+  """
+  Last name of the parent.
+  """
+  lastName: String!
+
+  """
+  Email address of the parent.
+  """
+  email: String!
+
+  """
+  Birth date of the parent in RFC3339 format.
+  """
+  birthDate: String!
+
+  """
+  List of children associated with this parent.
+  """
+  children: [Child!]
+
+  """
+  Timestamp when the parent was created.
+  """
+  createdAt: String!
+
+  """
+  Timestamp when the parent was last updated.
+  """
+  updatedAt: String!
+}
+
+"""
+Input for creating a new parent.
+"""
+input CreateParentInput {
+  """
+  First name of the parent.
+  """
+  firstName: String!
+
+  """
+  Last name of the parent.
+  """
+  lastName: String!
+
+  """
+  Email address of the parent.
+  """
+  email: String!
+
+  """
+  Birth date of the parent in RFC3339 format.
+  """
+  birthDate: String!
+}
+
+"""
+Input for updating an existing parent.
+"""
+input UpdateParentInput {
+  """
+  First name of the parent.
+  """
+  firstName: String
+
+  """
+  Last name of the parent.
+  """
+  lastName: String
+
+  """
+  Email address of the parent.
+  """
+  email: String
+
+  """
+  Birth date of the parent in RFC3339 format.
+  """
+  birthDate: String
+}
+
+input ParentFilter {
+  firstName: String
+  lastName: String
+  email: String
+  minAge: Int
+  maxAge: Int
+}
+
+type ParentConnection {
+  edges: [ParentEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type ParentEdge {
+  node: Parent!
+  cursor: String!
+}
+
+# Child types
+type Child {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  birthDate: String!
+  parentId: ID!
+  createdAt: String!
+  updatedAt: String!
+}
+
+input CreateChildInput {
+  firstName: String!
+  lastName: String!
+  birthDate: String!
+  parentId: ID!
+}
+
+input UpdateChildInput {
+  firstName: String
+  lastName: String
+  birthDate: String
+}
+
+input ChildFilter {
+  firstName: String
+  lastName: String
+  minAge: Int
+  maxAge: Int
+}
+
+type ChildConnection {
+  edges: [ChildEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type ChildEdge {
+  node: Child!
+  cursor: String!
+}
+
+# Common types
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+input PaginationInput {
+  page: Int
+  pageSize: Int
+}
+
+input SortInput {
+  field: String
+  direction: SortDirection
+}
+
+enum SortDirection {
+  ASC
+  DESC
+}

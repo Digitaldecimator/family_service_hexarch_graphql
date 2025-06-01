@@ -1,0 +1,56 @@
+# GraphQL Configuration for Family Service
+schema:
+  - schema.graphql
+exec:
+  filename: generated.go
+  package: graphql
+model:
+  filename: models_gen.go
+  package: graphql
+resolver:
+  layout: follow-schema
+  dir: .
+  package: graphql
+  filename_template: "{name}.resolvers.go"
+models:
+  ID:
+    model:
+      - github.com/99designs/gqlgen/graphql.ID
+      - github.com/99designs/gqlgen/graphql.Int
+      - github.com/99designs/gqlgen/graphql.Int64
+      - github.com/99designs/gqlgen/graphql.Int32
+  Int:
+    model:
+      - github.com/99designs/gqlgen/graphql.Int
+      - github.com/99designs/gqlgen/graphql.Int64
+      - github.com/99designs/gqlgen/graphql.Int32
+  Parent:
+    model: github.com/abitofhelp/family-service2/internal/domain.Parent
+    fields:
+      children:
+        resolver: true
+  Child:
+    model: github.com/abitofhelp/family-service2/internal/domain.Child
+  ParentConnection:
+    fields:
+      edges:
+        resolver: true
+      pageInfo:
+        resolver: true
+      totalCount:
+        resolver: true
+  ChildConnection:
+    fields:
+      edges:
+        resolver: true
+      pageInfo:
+        resolver: true
+      totalCount:
+        resolver: true
+autobind:
+  - github.com/abitofhelp/family-service2/internal/domain
+omit_slice_element_pointers: true
+skip_validation: true
+directives:
+  auth:
+    skip_runtime: true
