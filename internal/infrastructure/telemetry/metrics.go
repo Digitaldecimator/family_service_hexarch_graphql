@@ -80,7 +80,7 @@ func NewMetricsProvider(ctx context.Context, logger *zap.Logger, k *koanf.Koanf)
 	otel.SetMeterProvider(provider)
 
 	// Create meter
-	meter := provider.Meter("github.com/abitofhelp/family-service2")
+	meter := provider.Meter("github.com/abitofhelp/family_service_hexarch_graphql")
 
 	logger.Info("Metrics provider initialized",
 		zap.String("service", config.ServiceName),

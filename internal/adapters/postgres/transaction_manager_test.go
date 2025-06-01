@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abitofhelp/family-service2/internal/adapters/postgres"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/adapters/postgres"
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

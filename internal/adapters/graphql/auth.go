@@ -3,8 +3,8 @@ package graphql
 import (
 	"net/http"
 
-	"github.com/abitofhelp/family-service2/internal/infrastructure/auth"
-	"github.com/abitofhelp/family-service2/internal/ports"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/auth"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/ports"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/trace"
 	"go.uber.org/zap"

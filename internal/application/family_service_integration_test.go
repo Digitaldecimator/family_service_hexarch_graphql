@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abitofhelp/family-service2/internal/adapters/mongodb"
-	"github.com/abitofhelp/family-service2/internal/application"
-	"github.com/abitofhelp/family-service2/internal/ports"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/adapters/mongodb"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/application"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/ports"
 	"github.com/go-playground/validator/v10"
 	"github.com/google/uuid"
 	"github.com/knadh/koanf/v2"

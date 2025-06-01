@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abitofhelp/family-service2/internal/domain"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/domain"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 )

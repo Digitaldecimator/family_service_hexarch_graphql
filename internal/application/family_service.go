@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/abitofhelp/family-service2/internal/domain"
-	"github.com/abitofhelp/family-service2/internal/ports"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/domain"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/ports"
 	"github.com/go-playground/validator/v10"
 	"github.com/google/uuid"
 	"go.opentelemetry.io/otel"
@@ -165,7 +165,7 @@ func (s *FamilyService) GetParentByID(ctx context.Context, id uuid.UUID) (*domai
 // Returns:
 //   - *domain.Parent: The updated parent entity if successful
 //   - error: A NotFoundError if the parent doesn't exist, a ValidationError if validation fails,
-//            or a database error
+//     or a database error
 func (s *FamilyService) UpdateParent(ctx context.Context, id uuid.UUID, firstName, lastName, email, birthDateStr string) (*domain.Parent, error) {
 	ctx, span := s.tracer.Start(ctx, "FamilyService.UpdateParent")
 	defer span.End()
@@ -222,7 +222,7 @@ func (s *FamilyService) UpdateParent(ctx context.Context, id uuid.UUID, firstNam
 //
 // Returns:
 //   - error: A NotFoundError if the parent doesn't exist, a TransactionError if the transaction
-//            fails, or a database error
+//     fails, or a database error
 func (s *FamilyService) DeleteParent(ctx context.Context, id uuid.UUID) error {
 	ctx, span := s.tracer.Start(ctx, "FamilyService.DeleteParent")
 	defer span.End()

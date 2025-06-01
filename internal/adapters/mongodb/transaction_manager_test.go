@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abitofhelp/family-service2/internal/adapters/mongodb"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/adapters/mongodb"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"go.mongodb.org/mongo-driver/mongo"

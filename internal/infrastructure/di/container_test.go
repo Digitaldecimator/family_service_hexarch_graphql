@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abitofhelp/family-service2/internal/infrastructure/config"
-	"github.com/abitofhelp/family-service2/internal/infrastructure/di"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/config"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/di"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap"

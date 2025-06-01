@@ -4,7 +4,7 @@ package health
 import (
 	"context"
 	"encoding/json"
-	"github.com/abitofhelp/family-service2/internal/infrastructure/config"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/config"
 	"net/http"
 	"time"
 

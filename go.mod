@@ -1,4 +1,4 @@
-module github.com/abitofhelp/family-service2
+module github.com/abitofhelp/family_service_hexarch_graphql
 
 go 1.24
 

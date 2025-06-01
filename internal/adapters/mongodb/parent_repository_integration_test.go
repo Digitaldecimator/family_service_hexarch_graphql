@@ -6,9 +6,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abitofhelp/family-service2/internal/adapters/mongodb"
-	"github.com/abitofhelp/family-service2/internal/domain"
-	"github.com/abitofhelp/family-service2/internal/ports"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/adapters/mongodb"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/domain"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/ports"
 	"github.com/google/uuid"
 	"github.com/knadh/koanf/v2"
 	"github.com/stretchr/testify/assert"
@@ -74,7 +74,6 @@ func setupMongoDBTest(t *testing.T) (*mongo.Database, context.Context, func()) {
 
 	return db, ctx, cleanup
 }
-
 
 // TestParentRepositoryIntegration tests the MongoDB parent repository with a real MongoDB database
 func TestParentRepositoryIntegration(t *testing.T) {

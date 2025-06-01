@@ -5,7 +5,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/abitofhelp/family-service2/internal/domain"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/domain"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/trace"
@@ -158,7 +158,7 @@ func (tm *TransactionManager) RollbackTx(ctx context.Context) error {
 	// Create a background context for rollback if the original context is cancelled
 	rollbackCtx := ctx
 	if ctx.Err() != nil {
-		tm.logger.Warn("Using background context for rollback because original context is cancelled", 
+		tm.logger.Warn("Using background context for rollback because original context is cancelled",
 			zap.Error(ctx.Err()))
 		rollbackCtx = context.Background()
 	}
@@ -263,7 +263,7 @@ func (tm *TransactionManager) WithTx(ctx context.Context, fn func(ctx context.Co
 		if err := fn(sc); err != nil {
 			// Check if context was cancelled
 			if sc.Err() != nil && err != sc.Err() {
-				tm.logger.Warn("Context cancelled during transaction execution", 
+				tm.logger.Warn("Context cancelled during transaction execution",
 					zap.Error(sc.Err()),
 					zap.Error(err))
 			}

@@ -3,7 +3,7 @@ package mocks
 import (
 	"context"
 
-	"github.com/abitofhelp/family-service2/internal/ports"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/ports"
 )
 
 // MockRepositoryFactory is a mock implementation of the ports.RepositoryFactory interface

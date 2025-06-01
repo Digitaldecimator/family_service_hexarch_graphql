@@ -6,9 +6,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abitofhelp/family-service2/internal/adapters/graphql"
-	"github.com/abitofhelp/family-service2/internal/infrastructure/auth"
-	"github.com/abitofhelp/family-service2/internal/mocks"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/adapters/graphql"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/auth"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/mocks"
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/zap/zaptest"
 )

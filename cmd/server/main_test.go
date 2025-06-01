@@ -3,18 +3,18 @@ package main
 import (
 	"context"
 	"encoding/json"
-	"github.com/abitofhelp/family-service2/internal/infrastructure/config"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/config"
 	"net/http"
 	"net/http/httptest"
 	"os"
 	"testing"
 	"time"
 
-	"github.com/abitofhelp/family-service2/internal/infrastructure/health"
-	"github.com/abitofhelp/family-service2/internal/infrastructure/logging"
-	"github.com/abitofhelp/family-service2/internal/infrastructure/server"
-	"github.com/abitofhelp/family-service2/internal/infrastructure/shutdown"
-	"github.com/abitofhelp/family-service2/internal/mocks"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/health"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/logging"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/server"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/shutdown"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/mocks"
 	"github.com/knadh/koanf/v2"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
@@ -47,7 +47,6 @@ func (m *MockContainer) Close() error {
 	args := m.Called()
 	return args.Error(0)
 }
-
 
 // TestHealthCheck tests the health check endpoint
 func TestHealthCheck(t *testing.T) {
@@ -272,7 +271,6 @@ func TestGracefulShutdown(t *testing.T) {
 		t.Fatal("Timeout waiting for shutdown function to be called")
 	}
 }
-
 
 // Note: The containerAdapter is a simple wrapper around the di.Container
 // and doesn't need extensive testing. Its functionality is indirectly

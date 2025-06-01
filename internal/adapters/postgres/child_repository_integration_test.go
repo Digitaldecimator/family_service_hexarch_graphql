@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abitofhelp/family-service2/internal/adapters/postgres"
-	"github.com/abitofhelp/family-service2/internal/domain"
-	"github.com/abitofhelp/family-service2/internal/ports"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/adapters/postgres"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/domain"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/ports"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

@@ -1,7 +1,7 @@
 package mocks
 
 import (
-	"github.com/abitofhelp/family-service2/internal/infrastructure/auth"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/auth"
 )
 
 // MockJWTService is a mock implementation of the auth.JWTService

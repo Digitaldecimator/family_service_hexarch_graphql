@@ -10,9 +10,9 @@ import (
 	"time"
 
 	"github.com/99designs/gqlgen/graphql/handler"
-	"github.com/abitofhelp/family-service2/internal/adapters/graphql"
-	"github.com/abitofhelp/family-service2/internal/domain"
-	"github.com/abitofhelp/family-service2/internal/mocks"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/adapters/graphql"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/domain"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/mocks"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -106,7 +106,7 @@ func TestGraphQLParentQuery(t *testing.T) {
 		assert.Equal(t, "parent:read", operation)
 		return true, nil
 	}
-	
+
 	mockFamilyService.GetParentByIDFunc = func(ctx context.Context, id uuid.UUID) (*domain.Parent, error) {
 		assert.Equal(t, parentID, id)
 		return parent, nil
@@ -187,7 +187,7 @@ func TestGraphQLCreateParentMutation(t *testing.T) {
 		assert.Equal(t, "parent:create", operation)
 		return true, nil
 	}
-	
+
 	mockFamilyService.CreateParentFunc = func(ctx context.Context, firstName, lastName, email, birthDate string) (*domain.Parent, error) {
 		assert.Equal(t, "Jane", firstName)
 		assert.Equal(t, "Smith", lastName)
@@ -276,7 +276,7 @@ func TestGraphQLChildQuery(t *testing.T) {
 		assert.Equal(t, "child:read", operation)
 		return true, nil
 	}
-	
+
 	mockFamilyService.GetChildByIDFunc = func(ctx context.Context, id uuid.UUID) (*domain.Child, error) {
 		assert.Equal(t, childID, id)
 		return child, nil
@@ -357,7 +357,7 @@ func TestGraphQLCreateChildMutation(t *testing.T) {
 		assert.Equal(t, "child:create", operation)
 		return true, nil
 	}
-	
+
 	mockFamilyService.CreateChildFunc = func(ctx context.Context, firstName, lastName string, birthDate string, parentID uuid.UUID) (*domain.Child, error) {
 		assert.Equal(t, "Bob", firstName)
 		assert.Equal(t, "Smith", lastName)

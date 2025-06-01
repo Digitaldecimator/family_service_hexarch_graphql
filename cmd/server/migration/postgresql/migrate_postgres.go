@@ -5,9 +5,9 @@ import (
 	"log"
 	"time"
 
-	"github.com/abitofhelp/family-service2/internal/adapters/postgres/migrations"
-	"github.com/abitofhelp/family-service2/internal/infrastructure/config"
-	"github.com/abitofhelp/family-service2/internal/infrastructure/logging"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/adapters/postgres/migrations"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/config"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/logging"
 	"github.com/jackc/pgx/v5/pgxpool"
 	"go.uber.org/zap"
 )
@@ -63,4 +63,3 @@ func main() {
 	}
 	logger.Info("PostgreSQL migrations completed successfully")
 }
-

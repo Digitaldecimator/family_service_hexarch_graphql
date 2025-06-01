@@ -5,8 +5,8 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/abitofhelp/family-service2/internal/domain"
-	"github.com/abitofhelp/family-service2/internal/ports"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/domain"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/ports"
 	"github.com/google/uuid"
 )
 

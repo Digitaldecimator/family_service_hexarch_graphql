@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/abitofhelp/family-service2/internal/adapters/mongodb/migrations"
-	"github.com/abitofhelp/family-service2/internal/infrastructure/config"
-	"github.com/abitofhelp/family-service2/internal/infrastructure/logging"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/adapters/mongodb/migrations"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/config"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/logging"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.opentelemetry.io/contrib/instrumentation/go.mongodb.org/mongo-driver/mongo/otelmongo"

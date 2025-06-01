@@ -7,14 +7,14 @@ package main
 import (
 	"context"
 	"github.com/99designs/gqlgen/graphql/handler"
-	"github.com/abitofhelp/family-service2/internal/adapters/graphql"
-	"github.com/abitofhelp/family-service2/internal/infrastructure/config"
-	"github.com/abitofhelp/family-service2/internal/infrastructure/di"
-	"github.com/abitofhelp/family-service2/internal/infrastructure/health"
-	"github.com/abitofhelp/family-service2/internal/infrastructure/logging"
-	"github.com/abitofhelp/family-service2/internal/infrastructure/server"
-	"github.com/abitofhelp/family-service2/internal/infrastructure/shutdown"
-	"github.com/abitofhelp/family-service2/internal/infrastructure/telemetry"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/adapters/graphql"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/config"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/di"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/health"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/logging"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/server"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/shutdown"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/telemetry"
 	"go.uber.org/zap"
 	"log"
 	"net/http"
@@ -75,7 +75,7 @@ func main() {
 	// Set up metrics endpoint
 	if cfg.Telemetry.Exporters.Metrics.Prometheus.Enabled {
 		metricsPath := cfg.Telemetry.Exporters.Metrics.Prometheus.Path
-		logger.Info("Setting up Prometheus metrics endpoint", 
+		logger.Info("Setting up Prometheus metrics endpoint",
 			zap.String("path", metricsPath),
 			zap.String("listen", cfg.Telemetry.Exporters.Metrics.Prometheus.Listen))
 		mux.Handle(metricsPath, telemetry.CreatePrometheusHandler())

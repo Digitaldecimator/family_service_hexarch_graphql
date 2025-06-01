@@ -7,7 +7,7 @@ import (
 	"runtime/debug"
 	"time"
 
-	"github.com/abitofhelp/family-service2/internal/infrastructure/logging"
+	"github.com/abitofhelp/family_service_hexarch_graphql/internal/infrastructure/logging"
 	"go.uber.org/zap"
 )
 
@@ -15,10 +15,10 @@ import (
 // It extends the standard http.Server with logging, context-aware logging,
 // and graceful shutdown capabilities.
 type Server struct {
-	*http.Server                      // Embedded standard HTTP server
-	logger          *zap.Logger       // Logger for server events
+	*http.Server                           // Embedded standard HTTP server
+	logger          *zap.Logger            // Logger for server events
 	contextLogger   *logging.ContextLogger // Context-aware logger
-	shutdownTimeout time.Duration     // Maximum time to wait for server shutdown
+	shutdownTimeout time.Duration          // Maximum time to wait for server shutdown
 }
 
 // Config contains server configuration parameters.

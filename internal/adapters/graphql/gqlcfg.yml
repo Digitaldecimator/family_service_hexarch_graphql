@@ -25,12 +25,12 @@ models:
       - github.com/99designs/gqlgen/graphql.Int64
       - github.com/99designs/gqlgen/graphql.Int32
   Parent:
-    model: github.com/abitofhelp/family-service2/internal/domain.Parent
+    model: github.com/abitofhelp/family_service_hexarch_graphql/internal/domain.Parent
     fields:
       children:
         resolver: true
   Child:
-    model: github.com/abitofhelp/family-service2/internal/domain.Child
+    model: github.com/abitofhelp/family_service_hexarch_graphql/internal/domain.Child
   ParentConnection:
     fields:
       edges:
@@ -48,7 +48,7 @@ models:
       totalCount:
         resolver: true
 autobind:
-  - github.com/abitofhelp/family-service2/internal/domain
+  - github.com/abitofhelp/family_service_hexarch_graphql/internal/domain
 omit_slice_element_pointers: true
 skip_validation: true
 directives:
