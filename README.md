@@ -1,6 +1,7 @@
 # Family Service
 
-A comprehensive service for managing family data using GraphQL in a hexagonal architecture with support for both MongoDB and PostgreSQL databases.
+This repository contains an open-source starter project for a GraphQL service with enterprise features. 
+It manages family data using GraphQL in a hexagonal architecture with support for both MongoDB and PostgreSQL databases.
 
 ## Overview
 
