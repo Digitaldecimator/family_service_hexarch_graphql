@@ -1,0 +1,503 @@
+# Family Service Hexagonal Architecture with GraphQL - AI Prompts
+
+This document contains a series of prompts that can be used with AI assistants to recreate the Family Service project from scratch. Each prompt is designed to guide the AI in generating specific components of the project.
+
+## Project Setup Prompts
+
+### 1. Project Initialization
+
+```
+Create a new Go project called "family-service" that will implement a GraphQL API for managing family data using a hexagonal architecture. The project should have the following directory structure:
+- cmd/server: Main application entry point
+- internal/domain: Domain models and business logic
+- internal/ports: Interface definitions
+- internal/application: Application services
+- internal/adapters: Implementations of interfaces
+- internal/infrastructure: Cross-cutting concerns
+- pkg: Public packages
+- docs: Documentation
+
+Initialize the project with Go modules and set up a basic README.md file describing the project.
+```
+
+### 2. Domain Models
+
+```
+Create the domain models for the Family Service project. The domain should include:
+
+1. An Entity interface that defines common behavior for all domain entities:
+   - GetID(): Returns the entity's unique identifier
+   - IsDeleted(): Checks if the entity is marked as deleted
+   - MarkAsDeleted(): Marks the entity as deleted
+   - GetCreatedAt(): Returns the entity's creation timestamp
+   - GetUpdatedAt(): Returns the entity's last update timestamp
+   - GetDeletedAt(): Returns the entity's deletion timestamp, if any
+
+2. A Parent entity that implements the Entity interface:
+   - ID: UUID
+   - FirstName: string
+   - LastName: string
+   - Email: string
+   - BirthDate: time.Time
+   - Children: []Child
+   - CreatedAt: time.Time
+   - UpdatedAt: time.Time
+   - DeletedAt: *time.Time
+   - Methods:
+     - AddChild(child Child)
+     - RemoveChild(childID UUID) bool
+     - Update(firstName, lastName, email string, birthDate time.Time)
+     - FullName() string
+
+3. A Child entity that implements the Entity interface:
+   - ID: UUID
+   - FirstName: string
+   - LastName: string
+   - BirthDate: time.Time
+   - ParentID: UUID
+   - CreatedAt: time.Time
+   - UpdatedAt: time.Time
+   - DeletedAt: *time.Time
+   - Methods:
+     - Update(firstName, lastName string, birthDate time.Time)
+     - FullName() string
+     - Age() int
+
+Include proper validation tags and implement all methods with appropriate documentation.
+```
+
+### 3. Ports Layer
+
+```
+Create the ports layer for the Family Service project. The ports layer should define interfaces for:
+
+1. Repository interfaces:
+   - ParentRepository: Interface for parent data access
+     - Create(ctx context.Context, parent *domain.Parent) error
+     - GetByID(ctx context.Context, id uuid.UUID) (*domain.Parent, error)
+     - Update(ctx context.Context, parent *domain.Parent) error
+     - Delete(ctx context.Context, id uuid.UUID) error
+     - List(ctx context.Context, filter domain.ParentFilter, pagination domain.Pagination) ([]*domain.Parent, error)
+     - Count(ctx context.Context, filter domain.ParentFilter) (int64, error)
+   
+   - ChildRepository: Interface for child data access
+     - Create(ctx context.Context, child *domain.Child) error
+     - GetByID(ctx context.Context, id uuid.UUID) (*domain.Child, error)
+     - Update(ctx context.Context, child *domain.Child) error
+     - Delete(ctx context.Context, id uuid.UUID) error
+     - ListByParentID(ctx context.Context, parentID uuid.UUID, pagination domain.Pagination) ([]*domain.Child, error)
+     - List(ctx context.Context, filter domain.ChildFilter, pagination domain.Pagination) ([]*domain.Child, error)
+     - Count(ctx context.Context, filter domain.ChildFilter) (int64, error)
+
+2. Service interfaces:
+   - FamilyService: Interface for family management operations
+     - CreateParent(ctx context.Context, input domain.CreateParentInput) (*domain.Parent, error)
+     - GetParentByID(ctx context.Context, id uuid.UUID) (*domain.Parent, error)
+     - UpdateParent(ctx context.Context, id uuid.UUID, input domain.UpdateParentInput) (*domain.Parent, error)
+     - DeleteParent(ctx context.Context, id uuid.UUID) error
+     - ListParents(ctx context.Context, filter domain.ParentFilter, pagination domain.Pagination) ([]*domain.Parent, error)
+     - CountParents(ctx context.Context, filter domain.ParentFilter) (int64, error)
+     - CreateChild(ctx context.Context, input domain.CreateChildInput) (*domain.Child, error)
+     - GetChildByID(ctx context.Context, id uuid.UUID) (*domain.Child, error)
+     - UpdateChild(ctx context.Context, id uuid.UUID, input domain.UpdateChildInput) (*domain.Child, error)
+     - DeleteChild(ctx context.Context, id uuid.UUID) error
+     - ListChildrenByParentID(ctx context.Context, parentID uuid.UUID, pagination domain.Pagination) ([]*domain.Child, error)
+     - ListChildren(ctx context.Context, filter domain.ChildFilter, pagination domain.Pagination) ([]*domain.Child, error)
+     - CountChildren(ctx context.Context, filter domain.ChildFilter) (int64, error)
+     - AddChildToParent(ctx context.Context, parentID, childID uuid.UUID) error
+     - RemoveChildFromParent(ctx context.Context, parentID, childID uuid.UUID) error
+
+3. Transaction management interfaces:
+   - TransactionManager: Interface for managing database transactions
+     - BeginTx(ctx context.Context) (context.Context, error)
+     - CommitTx(ctx context.Context) error
+     - RollbackTx(ctx context.Context) error
+     - WithTx(ctx context.Context, fn func(ctx context.Context) error) error
+
+Include proper documentation for all interfaces and methods.
+```
+
+### 4. Application Layer
+
+```
+Create the application layer for the Family Service project. The application layer should implement the service interfaces defined in the ports layer:
+
+1. FamilyService implementation:
+   - Implement all methods defined in the FamilyService interface
+   - Use the repository interfaces for data access
+   - Implement business logic for managing parents and children
+   - Implement validation of inputs
+   - Implement transaction management for operations that require it
+   - Handle errors appropriately
+   - Include logging for important operations
+
+The implementation should follow clean code principles, be well-documented, and include error handling.
+```
+
+### 5. MongoDB Adapter
+
+```
+Create the MongoDB adapter for the Family Service project. The adapter should implement the repository interfaces defined in the ports layer:
+
+1. MongoDB connection management:
+   - Create a MongoDB client
+   - Connect to the MongoDB server
+   - Disconnect from the MongoDB server
+   - Implement health check
+
+2. MongoDB repository implementations:
+   - Implement ParentRepository interface for MongoDB
+   - Implement ChildRepository interface for MongoDB
+   - Implement TransactionManager interface for MongoDB
+
+3. MongoDB migrations:
+   - Implement a migration system for MongoDB
+   - Create initial migrations for creating collections and indexes
+
+The implementation should handle MongoDB-specific concerns like document mapping, indexing, and error handling.
+```
+
+### 6. PostgreSQL Adapter
+
+```
+Create the PostgreSQL adapter for the Family Service project. The adapter should implement the repository interfaces defined in the ports layer:
+
+1. PostgreSQL connection management:
+   - Create a PostgreSQL connection pool
+   - Connect to the PostgreSQL server
+   - Disconnect from the PostgreSQL server
+   - Implement health check
+
+2. PostgreSQL repository implementations:
+   - Implement ParentRepository interface for PostgreSQL
+   - Implement ChildRepository interface for PostgreSQL
+   - Implement TransactionManager interface for PostgreSQL
+
+3. PostgreSQL migrations:
+   - Implement a migration system for PostgreSQL
+   - Create initial migrations for creating tables and indexes
+
+4. Generic repository implementation (optional):
+   - Implement a generic repository using Go generics
+   - Create type-safe CRUD operations for entities
+
+The implementation should handle PostgreSQL-specific concerns like SQL queries, transactions, and error handling.
+```
+
+### 7. GraphQL Adapter
+
+```
+Create the GraphQL adapter for the Family Service project. The adapter should expose the application's functionality via GraphQL:
+
+1. GraphQL schema:
+   - Define types for Parent and Child entities
+   - Define input types for creating and updating entities
+   - Define filter types for filtering entities
+   - Define pagination and sorting inputs
+   - Define queries for retrieving entities
+   - Define mutations for creating, updating, and deleting entities
+
+2. GraphQL resolvers:
+   - Implement resolvers for all queries and mutations
+   - Use the FamilyService interface for business operations
+   - Handle authentication and authorization
+   - Implement error handling and mapping to GraphQL errors
+
+3. GraphQL server setup:
+   - Set up a GraphQL server using gqlgen
+   - Configure the server with the schema and resolvers
+   - Set up middleware for authentication, logging, etc.
+
+The implementation should follow GraphQL best practices and provide a clean, well-documented API.
+```
+
+### 8. Infrastructure Layer
+
+```
+Create the infrastructure layer for the Family Service project. The infrastructure layer should provide cross-cutting concerns:
+
+1. Logging:
+   - Implement a logging system using zap
+   - Configure log levels and output formats
+   - Create a context-aware logger
+
+2. Configuration:
+   - Implement a configuration system using viper
+   - Support configuration from files and environment variables
+   - Define configuration structs for different components
+
+3. Dependency Injection:
+   - Implement a dependency injection container
+   - Register and resolve dependencies
+   - Manage component lifecycles
+
+4. Authentication and Authorization:
+   - Implement JWT and OIDC authentication
+   - Implement role-based authorization
+   - Create middleware for authentication and authorization
+
+5. Validation:
+   - Implement input validation using validator
+   - Create custom validation rules
+   - Handle validation errors
+
+6. Health Monitoring:
+   - Implement health check endpoints
+   - Monitor database connections
+   - Provide health status information
+
+7. Telemetry:
+   - Implement metrics collection using Prometheus
+   - Implement distributed tracing using OpenTelemetry
+   - Create middleware for request tracking
+
+8. Server:
+   - Implement an HTTP server
+   - Configure routes and middleware
+   - Handle graceful shutdown
+
+The implementation should be modular, well-documented, and follow best practices for each concern.
+```
+
+### 9. Main Application
+
+```
+Create the main application for the Family Service project. The main application should:
+
+1. Initialize the application:
+   - Load configuration
+   - Set up logging
+   - Initialize the dependency injection container
+   - Register all components in the container
+
+2. Set up the HTTP server:
+   - Create an HTTP server
+   - Configure routes for GraphQL, health checks, and metrics
+   - Set up middleware for authentication, logging, etc.
+
+3. Start the server:
+   - Start the HTTP server
+   - Handle signals for graceful shutdown
+   - Clean up resources on shutdown
+
+4. Implement graceful shutdown:
+   - Handle SIGINT and SIGTERM signals
+   - Shut down the HTTP server gracefully
+   - Close database connections
+   - Clean up other resources
+
+The implementation should be robust, handle errors appropriately, and follow best practices for application initialization and shutdown.
+```
+
+### 10. Docker and Docker Compose
+
+```
+Create Docker and Docker Compose configurations for the Family Service project. The configurations should:
+
+1. Dockerfile:
+   - Use a multi-stage build for smaller images
+   - Build the application in a Go build container
+   - Create a minimal runtime container
+   - Set up proper permissions and user
+   - Configure environment variables
+   - Set up health checks
+
+2. Docker Compose:
+   - Define services for the application, MongoDB, PostgreSQL, Prometheus, and Grafana
+   - Configure networking between services
+   - Set up volumes for data persistence
+   - Configure environment variables
+   - Set up health checks and dependencies
+   - Configure ports for external access
+
+3. Environment files:
+   - Create environment files for development and production
+   - Define environment variables for configuration
+
+The configurations should follow Docker best practices and make it easy to run the application in different environments.
+```
+
+### 11. Makefile
+
+```
+Create a Makefile for the Family Service project. The Makefile should include targets for:
+
+1. Development:
+   - Initialize the development environment
+   - Generate code
+   - Build the application
+   - Run the application
+   - Run the application with hot reloading
+
+2. Testing:
+   - Run all tests
+   - Run unit tests
+   - Run integration tests
+   - Run tests with race detection
+   - Run tests with coverage
+   - Generate and view coverage reports
+
+3. Database:
+   - Run MongoDB migrations
+   - Run PostgreSQL migrations
+   - Run all migrations
+
+4. Docker:
+   - Build Docker image
+   - Run Docker container
+   - Run Docker Compose
+
+5. Deployment:
+   - Deploy the application
+   - Clean up deployment
+
+6. Utilities:
+   - Lint code
+   - Format code
+   - Check for vulnerabilities
+   - Generate documentation
+
+The Makefile should be well-documented and easy to use.
+```
+
+### 12. Documentation
+
+```
+Create comprehensive documentation for the Family Service project. The documentation should include:
+
+1. README.md:
+   - Project overview
+   - Features
+   - Installation instructions
+   - Configuration options
+   - Usage examples
+   - API documentation
+   - Architecture overview
+   - Contributing guidelines
+   - License information
+
+2. Software Requirements Specification (SRS):
+   - Introduction
+   - Overall description
+   - Specific requirements
+   - Architecture
+   - Configuration
+   - Appendices
+
+3. Software Design Specification (SDS):
+   - Introduction
+   - System overview
+   - Architecture
+   - Component design
+   - Data design
+   - Interface design
+   - Operational scenarios
+   - Requirements matrix
+   - Appendices
+
+4. Software Testing Specification (STS):
+   - Introduction
+   - Test strategy
+   - Test plan
+   - Test cases
+   - Test environment
+   - Test deliverables
+   - UML diagrams
+   - Appendices
+
+The documentation should be clear, comprehensive, and follow best practices for technical documentation.
+```
+
+## Additional Prompts
+
+### 13. Testing
+
+```
+Create comprehensive tests for the Family Service project. The tests should include:
+
+1. Unit tests:
+   - Test domain models
+   - Test application services
+   - Test adapters
+   - Test infrastructure components
+
+2. Integration tests:
+   - Test database interactions
+   - Test GraphQL API
+   - Test authentication and authorization
+
+3. System tests:
+   - Test end-to-end scenarios
+   - Test performance
+   - Test security
+
+4. Test utilities:
+   - Create test fixtures
+   - Create test helpers
+   - Create mock implementations
+
+The tests should follow best practices for Go testing, use appropriate testing libraries, and achieve high code coverage.
+```
+
+### 14. CI/CD Pipeline
+
+```
+Create a CI/CD pipeline for the Family Service project using GitHub Actions. The pipeline should:
+
+1. Build:
+   - Build the application
+   - Run linters
+   - Check for vulnerabilities
+
+2. Test:
+   - Run unit tests
+   - Run integration tests
+   - Generate coverage reports
+
+3. Package:
+   - Build Docker image
+   - Push Docker image to registry
+
+4. Deploy:
+   - Deploy to staging environment
+   - Run smoke tests
+   - Deploy to production environment
+
+5. Notifications:
+   - Send notifications on success or failure
+   - Generate reports
+
+The pipeline should be efficient, reliable, and follow CI/CD best practices.
+```
+
+### 15. Monitoring and Observability
+
+```
+Create monitoring and observability configurations for the Family Service project. The configurations should:
+
+1. Prometheus:
+   - Configure Prometheus to scrape metrics from the application
+   - Define recording rules
+   - Define alerting rules
+
+2. Grafana:
+   - Create dashboards for monitoring the application
+   - Configure data sources
+   - Set up alerts
+
+3. Logging:
+   - Configure log aggregation
+   - Create log filters and parsers
+   - Set up log visualization
+
+4. Tracing:
+   - Configure distributed tracing
+   - Set up trace visualization
+   - Create trace sampling rules
+
+The configurations should provide comprehensive monitoring and observability for the application.
+```
+
+## Conclusion
+
+These prompts can be used with AI assistants to recreate the Family Service project from scratch. Each prompt focuses on a specific aspect of the project and provides detailed instructions for implementing that aspect. By following these prompts in sequence, you can build a complete, production-ready application with a hexagonal architecture and GraphQL API.
