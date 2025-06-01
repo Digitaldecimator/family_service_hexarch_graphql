@@ -3,9 +3,11 @@ package shutdown
 
 import (
 	"context"
+	"fmt"
 	"os"
 	"os/signal"
 	"syscall"
+	"time"
 
 	"go.uber.org/zap"
 )
@@ -13,7 +15,8 @@ import (
 // GracefulShutdown waits for termination signals and calls the provided shutdown function.
 // It handles OS signals (SIGINT, SIGTERM, SIGHUP) and context cancellation to trigger
 // graceful shutdown. It also handles multiple signals, forcing exit if a second signal
-// is received during shutdown.
+// is received during shutdown. A default timeout of 30 seconds is applied to the shutdown
+// function to prevent hanging.
 //
 // Parameters:
 //   - ctx: Context that can be cancelled to trigger shutdown
@@ -41,53 +44,57 @@ func GracefulShutdown(ctx context.Context, logger *zap.Logger, shutdownFunc func
 		defer close(done)
 
 		// Wait for either interrupt signal or context cancellation
+		var shutdownReason string
+		var shutdownDetails []zap.Field
+
 		select {
 		case sig := <-quit:
-			logger.Info("Received termination signal", 
+			shutdownReason = "Received termination signal"
+			shutdownDetails = []zap.Field{
 				zap.String("signal", sig.String()),
-				zap.String("type", "first"))
-
-			// Call the shutdown function
-			logger.Info("Executing shutdown function")
-			shutdownErr = shutdownFunc()
-			if shutdownErr != nil {
-				logger.Error("Error during shutdown", zap.Error(shutdownErr))
-			} else {
-				logger.Info("Graceful shutdown completed successfully")
+				zap.String("type", "first"),
 			}
-
-			// Handle additional signals during shutdown
-			select {
-			case sig := <-quit:
-				logger.Warn("Received second termination signal during shutdown, forcing exit", 
-					zap.String("signal", sig.String()),
-					zap.String("type", "second"))
-				os.Exit(1)
-			default:
-				// No second signal, continue normal shutdown
-			}
-
 		case <-ctx.Done():
-			logger.Info("Context cancelled, shutting down", zap.Error(ctx.Err()))
+			shutdownReason = "Context cancelled, shutting down"
+			shutdownDetails = []zap.Field{
+				zap.Error(ctx.Err()),
+			}
+		}
 
+		logger.Info(shutdownReason, shutdownDetails...)
+
+		// Create a timeout context for the shutdown function
+		shutdownCtx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+		defer cancel()
+
+		// Execute shutdown in a separate goroutine so we can monitor for timeout
+		shutdownDone := make(chan struct{})
+		go func() {
+			defer close(shutdownDone)
 			// Call the shutdown function
 			logger.Info("Executing shutdown function")
 			shutdownErr = shutdownFunc()
+		}()
+
+		// Wait for shutdown to complete or timeout
+		select {
+		case <-shutdownDone:
+			// Shutdown completed within timeout
 			if shutdownErr != nil {
 				logger.Error("Error during shutdown", zap.Error(shutdownErr))
 			} else {
 				logger.Info("Graceful shutdown completed successfully")
 			}
-
-			// Handle signals during context-initiated shutdown
-			select {
-			case sig := <-quit:
-				logger.Warn("Received termination signal during context-initiated shutdown, forcing exit", 
-					zap.String("signal", sig.String()))
-				os.Exit(1)
-			default:
-				// No signal, continue normal shutdown
-			}
+		case <-shutdownCtx.Done():
+			// Shutdown timed out
+			logger.Error("Shutdown function timed out after 30 seconds")
+			shutdownErr = fmt.Errorf("shutdown function timed out after 30 seconds")
+		case sig := <-quit:
+			// Received second signal during shutdown
+			logger.Warn("Received second termination signal during shutdown, forcing exit",
+				zap.String("signal", sig.String()),
+				zap.String("type", "second"))
+			os.Exit(1)
 		}
 	}()
 
@@ -108,22 +115,37 @@ func GracefulShutdown(ctx context.Context, logger *zap.Logger, shutdownFunc func
 //
 // Returns:
 //   - A cancel function that can be called to trigger shutdown programmatically
-func SetupGracefulShutdown(ctx context.Context, logger *zap.Logger, shutdownFunc func() error) context.CancelFunc {
+//   - A channel that will receive any error that occurs during shutdown
+func SetupGracefulShutdown(ctx context.Context, logger *zap.Logger, shutdownFunc func() error) (context.CancelFunc, <-chan error) {
 	// Create a context with cancellation
 	shutdownCtx, cancel := context.WithCancel(ctx)
 
+	// Create a channel to receive shutdown errors
+	// Buffer size 1 ensures we don't block if no one is listening
+	errCh := make(chan error, 1)
+
 	// Start a goroutine to handle shutdown
 	go func() {
-		// If an error occurs during shutdown, log it but don't propagate it
-		// since this is a background goroutine
+		// Execute the graceful shutdown
 		err := GracefulShutdown(shutdownCtx, logger, shutdownFunc)
-		if err != nil {
-			logger.Error("Error during background graceful shutdown", zap.Error(err))
+
+		// Send the error to the channel (nil if no error)
+		select {
+		case errCh <- err:
+			// Error sent successfully
+		default:
+			// No one is listening, just log the error
+			if err != nil {
+				logger.Error("Error during background graceful shutdown (no listener)", zap.Error(err))
+			}
 		}
+
+		// Close the error channel to signal completion
+		close(errCh)
 
 		// Ensure context is cancelled when shutdown is complete
 		cancel()
 	}()
 
-	return cancel
+	return cancel, errCh
 }

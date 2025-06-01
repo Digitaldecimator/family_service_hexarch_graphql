@@ -133,6 +133,9 @@ func applyMiddleware(handler http.Handler, logger *zap.Logger) http.Handler {
 				defer cancel()
 				r = r.WithContext(ctx)
 
+				// Create a timeout to prevent goroutine leaks
+				timeout := time.After(60 * time.Second)
+
 				go func() {
 					next.ServeHTTP(w, r)
 					close(done)
@@ -151,6 +154,21 @@ func applyMiddleware(handler http.Handler, logger *zap.Logger) http.Handler {
 					)
 					// We don't need to send a response as the client has disconnected
 					cancel()
+					return
+				case <-timeout:
+					// Request took too long, log and cancel
+					logger.Warn("Request timed out after 60 seconds",
+						zap.String("url", r.URL.String()),
+						zap.String("method", r.Method),
+					)
+					// Cancel the context to signal the handler to stop
+					cancel()
+					// Return a 504 Gateway Timeout response
+					w.WriteHeader(http.StatusGatewayTimeout)
+					_, writeErr := w.Write([]byte(`{"error":"Request timed out"}`))
+					if writeErr != nil {
+						logger.Error("Failed to write timeout response", zap.Error(writeErr))
+					}
 					return
 				}
 			})
